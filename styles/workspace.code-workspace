@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../VirtualVisitsBackend"
+		},
+		{
+			"path": "../../../glam-central"
+		},
+		{
+			"path": "../../../RecipePlatform"
+		}
+	],
+	"settings": {}
+}

@@ -1,116 +1,1347 @@
-.container {
-  padding: 0 2rem;
+@import url('https://fonts.googleapis.com/css?family=DM+Sans:200,300,400,500,600,700,800,900&display=swap');
+
+/*
+General Styles
+*/
+
+.redButton{
+    background-color: #E41F26;
+    border-radius: 6px;
+    font-size: 17px;
+    font-family: 'DM Sans', sans-serif;
+    border: 0px;
+    padding: 12px;
+    width: 134px;
+    height: 45px;
+    font-weight: 400;
+    color: #FFFFFF;
 }
 
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
+.greenButton{
+    background: #33A454;
+    border-radius: 7.10526px;
+    border: 0px;
+    padding: 12px;
+    width: 183px;
+    height: 45px;
+    color: #FFFFFF;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    text-align: center;
+}
+
+.greyButton{
+    background: #A5A5A5;
+    border-radius: 7.10526px;
+    border: 0px;
+    padding: 12px;
+    width: 183px;
+    height: 45px;
+    color: #FFFFFF;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    text-align: center;
+}
+
+
+
+.payeeDetails{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: center;
-}
-
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
 }
 
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+.payeeDetails .payeeDetail{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}   
+
+.payeeDetails .payeeDetail h6{
+  color: #82859B;
+  margin-bottom: 8px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  margin-top: 0px;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+.payeeDetails .payeeDetail h5{
+  color: #222128;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  margin: 0px;
 }
 
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+.closeBtn{
+   background: url("/images/close_btn.png");
+   background-position: center;
+   background-repeat: no-repeat;
+   border:none;
+   width: 40px;
+   height: 40px;
 }
 
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
+.generalInputField{
+    background: #FFFFFF;
+    border: 1.26111px solid #82859B;
+    box-sizing: border-box;
+    border-radius: 12.6111px;
+    height: 45px;
+    padding-left: 16px;
+    color: #82859B;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    font-style: normal;
+    opacity: 0.7;
 }
 
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
+.pageTitle{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+    color: #222128;
+    margin: 0px;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
+.paidText{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.2203px;
+    color: #3AA7D5;
+    border: 1.01574px solid #3AA7D5;
+    box-sizing: border-box;
+    border-radius: 5.07869px;
+    width: 70px;
+    max-width: 70px;
+    min-width: 70px;
+    text-align: center;
+    margin-right: 16px;
+    padding: 6px;
+}
+
+.notPaidText{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.2203px;
+    padding: 0px;
+    text-align: center;
+    color: #E41F26;
+    border: 1.01574px solid #E41F26;
+    box-sizing: border-box;
+    border-radius: 5.07869px;
+    width: 70px;
+    max-width: 70px;
+    min-width: 70px;
+    margin-right: 16px;
+    padding: 6px;
+}
+
+.colorRed{
+    color: #E41F26;
+}
+
+.colorGreen{
+    color: #33A454;
+}
+
+.adminLeftContent{
+    width: 24%;
+    min-height: 100vh;
+    height: 100vh;
+}
+
+.adminRightContent{
+    width: 74%;
+    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    align-items:flex-start;
+    justify-content: flex-start;
+    background: #F6F6F6;
     flex-direction: column;
-  }
+}
+
+
+.paymentModal{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.3);
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.paymentModalInnerContent{
+    min-width: 500px;
+    width: 600px;
+    padding: 24px;
+    background: #FFFFFF;
+    max-height: 100vh;
+    min-height: 400px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    background: #F6F6F6;
+}
+
+.paymentModalInnerContent .paymentModalTopcontent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    margin-bottom: 24px;
+}
+
+.paymentModalInnerContent .paymentModalTopcontent h2{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24.2044px;
+    margin: 0px;
+}
+
+.messageTop{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.3);
+    z-index: 20;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.messageTop .messageContent{
+    min-width: 200px;
+    width: 500px;
+    padding: 24px;
+    background: #FFFFFF;
+    max-height: 600pxx;
+    min-height: 200px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #F6F6F6;
+}
+
+.messageTop .messageContent h3{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24.2044px;
+    margin: 0px;
+    text-align: center;
+}
+
+.messageTop .messageContent h5{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 17.2044px;
+    margin-top: 24px;
+    text-align: center;
+}
+
+
+
+
+
+
+/*
+Payee Index
+*/
+
+.topContent{
+    height: 100vh;
+    width: 100%;
+    background: #000000;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+/*
+Payee Single Result Component
+*/
+
+.payeeResult{
+    border-radius: 8px;
+    background: #FFFFFF;
+    padding: 16px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.payeeResult .payeeAvatar{
+   margin-right: 20px;
+}
+
+.payeeResult .payeeDetail{
+   align-items: flex-start;
+   padding-top: 12px;
+   padding-bottom: 12px;
+}
+
+.payeeResult  .payeeDetails .payeeDetail h6{
+  font-size: 12.9535px;
+}
+
+.payeeResult  .payeeDetails .payeeDetail h5{
+  font-size: 14.5182px;
+}
+
+
+/*
+Payee No Results Component
+*/
+
+.payeeNoResults{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 350px;
+}
+
+.payeeNoResults h1{
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0px;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    margin-top: 30px;
+}
+
+.payeeNoResults h5{
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+
+
+/*
+Payee Holder Component
+*/
+
+.payeeResultsHolder{
+    background: #33A454;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    margin: 0px;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+
+
+
+/*
+payee Results Component
+*/
+
+.payeeResults{
+    background: #FFFFFF00;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+}
+
+
+
+
+/*
+Payee Search Component
+*/
+
+.payeeSearch{
+    background: #FFFFFF;
+    display: flex;
+    align-items: top;
+    justify-content: flex-start;
+    padding-top: 50px;
+    padding-right: 35px;
+    padding-left: 60px;
+    padding-bottom: 30px;
+    width: 60%;
+    margin: 0px;
+}
+
+.payeeSearch h1{
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 35px;
+    font-style: normal;
+    margin-top: 40px;
+}
+
+.payeeSearch .enterText{
+    margin-top: 80px;
+}
+
+.payeeSearch .membershipIDContent{
+    display: flex;
+    align-items: center;
+}
+
+.payeeSearch .inputField{
+    width: calc(100% - 150px);
+    margin-right: 16px;
+    border-radius: 6px;
+    height: 45px;
+    padding-left: 16px;
+    background: #F6F6F6;
+    border: 0px;
+    color: #82859B;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    font-style: normal;
+    opacity: 0.7;
+}
+
+
+.orContent{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60px;
+    margin-top: 40px;
+    margin-bottom: 0px;
+}
+
+.orContent hr{
+    width: 6px;
+    color: #82859B;
+    background: #82859B;
+    height: 1.5px;
+    border: 0px;
+    margin: 0px;
+}
+
+.orContent h2{
+    color: #E41F26;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    margin: 0px;
+}
+
+.payeeSearch .stateLga{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.payeeSearch select{
+    width: 47%;
+    border: 1.52505px solid #82859B;
+    box-sizing: border-box;
+    border-radius: 7.62524px;
+    height: 50px;
+    font-family: 'DM Sans';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18.3006px;
+    line-height: 24px;
+    color: #82859B;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+
+
+/*
+Payee Profile Component
+*/
+
+.payeeProfile{
+    background: #FFFFFF;
+    box-shadow: -11.4052px 24.4397px 16.2931px rgba(0, 0, 0, 0.05);
+    border-radius: 8.14657px;
+    padding: 34px;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.payeeProfile .topSection{
+   display: flex;
+   align-items: flex-start;
+   justify-content: space-between;
+   width: 100%;
+   margin-bottom: 35px;
+}
+
+.payeeProfile .payeeDetails .payeeDetail{
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.payeeProfile  .payeeDetails .payeeDetail h6{
+    font-size: 17.9535px;
+}
+
+.payeeProfile  .payeeDetails .payeeDetail h5{
+    font-size: 20.5182px;
+}
+
+.payeeProfile .greenButton{
+    margin-top: 34px;
+}
+
+
+/*
+Payee Amount Component
+*/
+
+.payeeAmount{
+    background: #FFFFFF;
+    box-shadow: -11.4052px 24.4397px 16.2931px rgba(0, 0, 0, 0.05);
+    border-radius: 8.14657px;
+    padding: 34px;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.payeeAmount h5{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17.9498px;
+    color: #82859B;
+    margin: 0px;
+}
+
+.payeeAmount h1{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.payeeAmount .topSection{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+
+
+
+
+/*
+Admin
+*/
+
+
+
+/*
+Admin Login 
+*/
+
+.adminLoginTop{
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #33A454;
+}
+
+
+.adminLoginInnerContent{
+    background: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 40px;
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    width: 400px;
+}
+
+.adminLoginInnerContent button{
+    margin-top: 40px;
+}
+
+.adminLoginInnerContentImage{
+    border: 3.02734px solid #F0F1F1;
+    box-sizing: border-box;
+    border-radius: 18px;
+}
+
+.adminLoginInput{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 24px;
+}
+
+.adminLoginInput h4{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20.1778px;
+    color: #82859B;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 8px;
+}
+
+.adminLoginInput input{
+    background: #FFFFFF;
+    border: 1.26111px solid #82859B;
+    box-sizing: border-box;
+    border-radius: 12.6111px;
+    height: 45px;
+    padding-left: 16px;
+    color: #82859B;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    font-style: normal;
+    opacity: 0.7;
+}
+
+
+
+
+/*
+Admin Dashboard
+*/
+
+.adminDashboard{
+    width: 100%;
+    min-height: 100vh;
+}
+
+.adminDashboard .adminDashboardContent{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+
+/*
+Admin Search
+*/
+
+.adminSearch{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    background: #F6F6F6;
+}
+
+.adminTopSearch{
+    padding-top: 24px;
+    padding-bottom: 16px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.adminTopSearch button{
+    width: 150px;
+}
+
+.adminTopSearch select{
+    border: none;
+    box-sizing: border-box;
+    border-radius: 7.62524px;
+    height: 45px;
+    font-family: 'DM Sans';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16.3006px;
+    line-height: 24px;
+    color: #82859B;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 150px;
+    background: #E41F26;
+    color: #FFFFFF;
+}
+
+.adminTopSearchSearch{
+    display: flex;
+    align-items: center;
+}
+
+.adminTopSearchSearch select{
+    margin-right: 8px;
+}
+
+.adminTopSearchSearch input{
+    margin-right: 8px;
+    border-radius: 7.62524px;
+}
+
+.adminTopSearchSearch button{
+    margin-right: 8px;
+    width: 150px;
+}
+
+
+
+
+/*
+Admin LeftSearch Component
+*/
+
+.adminLeftSearch{
+    width: 100%;
+    padding: 24px;
+}
+
+.adminLeftSearch select{
+    border: none;
+    box-sizing: border-box;
+    border-radius: 7.62524px;
+    height: 45px;
+    font-family: 'DM Sans';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16.3006px;
+    line-height: 24px;
+    color: #82859B;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+    background: #E41F26;
+    color: #FFFFFF;
+}
+
+.adminLeftSearch .btnSearch{
+    margin-top: 30px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.adminLeftSearch .btnClear{
+    
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.adminLeftInnerContent{
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 7.62524px;
+    border: 1px solid #82859B;
+    margin-top: 42px;
+}
+
+
+/*
+Admin Search Payment component
+*/
+
+.adminSearchPayment{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 24px;
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 7.62524px;
+    border: 1px solid #82859B;
+}
+
+.adminSearchPayment h4{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20.1778px;
+    color: #42454B;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 8px;
+}
+
+.adminSearchPayment .paymentAmount{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18.1778px;
+    color: #82859B;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 8px;
+}
+
+
+.adminSearchPayment .paymentDate{
+    margin-top: 16px;
+}
+
+.adminSearchPayment .paymentDate h4{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20.1778px;
+    color: #82859B;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 8px;
+}
+
+.adminSearchPayment .paymentDate h5{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18.1778px;
+    color: #222222;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 8px;
+}
+
+.adminSearchPayment button{
+    margin-top: 20px;
+    width: 100%;
+    
+}
+
+
+
+/*
+Admin Members Component
+*/
+
+.adminMembers{
+    width: 100%;
+    height: 100vh;
+    margin-top: 24px;
+}
+
+
+
+/*
+Admin Member Component
+*/
+
+.adminMemberHeader{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.adminMemberHeader h5{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14.1889px;
+    line-height: 16px;
+    color: #222128;
+    margin: 0px;
+    text-align: left;
+    width: 100px;
+    max-width: 100px;
+    min-width: 100px;
+}
+
+.adminMember{
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background: #FFFFFF;
+    border-radius: 5.07869px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+
+.adminMember h5{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.1889px;
+    line-height: 16px;
+    color: #222128;
+    margin: 0px;
+    text-align: left;
+    margin-right: 16px;
+    width: 100px;
+    max-width: 100px;
+    min-width: 100px;
+}
+
+.adminMember .memberId{
+    color: #3AA7D5;
+}
+
+.adminMember .memberAmount{
+    color: #33A454;
+}
+
+.adminMember .memberName{
+    
+}
+
+.adminMember .memberState{
+    
+}
+
+.adminMember .memberLga{
+    
+}
+
+.adminMember .memberStatus{
+    
+}
+
+.adminMember .memberDatePaid{
+    
+}
+
+
+
+/*
+Admin Payment Filter
+*/
+
+.adminPaymentFilter{
+    margin-top: 24px;
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 7.62524px;
+    border: 1px solid #82859B;
+    display: flex;
+    flex-direction: column;
+}
+
+.adminPaymentFilter .paymentFilterOption{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.adminPaymentFilter .paymentFilterOption label{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #222128;
+    margin-left: 16px;
+}
+
+
+
+
+/*
+Nav Component
+*/
+.nav{
+    height: 100vh;
+    padding-top: 50px;
+    padding-bottom: 30px;
+   
+    background: #FFFFFF;
+    position: fixed;
+    top: 0;
+    margin: 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav .image{
+
+}
+
+.nav .navItem{
+    display: flex;
+    width: 100%;
+    margin-bottom: 8px;
+    align-items: center;
+}
+
+.nav .navItem:hover{
+    cursor: pointer;
+}
+
+.nav .navItem h5{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18.2044px;
+    line-height: 24px;
+    /* identical to box height */
+
+
+    /* Off blue */
+
+    color: #82859B;
+}
+
+.navHolder{
+    width: 100%;
+    padding-right: 40px;
+    margin-top: 30px;
+}
+
+
+
+/*
+Dashboard
+*/
+
+.dashboardLeftContent{
+    margin-left: 220px;
+    width: 100%;
+}
+
+
+
+/*
+Change Payment
+*/
+
+.changePayment .payment h5
+{   
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16.2044px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: left;
+    flex: 3;
+}
+
+.changePayment .payment{
+    padding: 16px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.changePayment .paymentItem{
+    padding: 16px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: -11.4052px 24.4397px 16.2931px rgba(0, 0, 0, 0.05);
+    border-radius: 8.14657px;
+}
+
+.changePayment .paymentItem:hover{
+    cursor: pointer;
+}
+
+.changePayment .paymentItem h5{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16.2044px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: left;
+    flex: 3;
+}
+
+
+
+
+
+/*
+Create Payment Component
+*/
+
+.createPayment{
+
+}
+
+.createPayment h5
+{   
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16.2044px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: left;
+}
+
+.createPayment .paymentItem{
+    margin-bottom: 20px;
+}
+
+.createPayment .paymentItem .generalInputField{
+    width: 50%;
+    min-width: 200px;
+}
+
+.createPayment .saveButton{
+    width: 50%;
+    margin-top: 20px;
+}
+
+
+
+
+
+/*
+Admin Payment Single Component
+*/
+
+.singlePayment{
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background: #FFFFFF;
+    border-radius: 5.07869px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    border: 1.26111px solid #82859B;
+}
+
+.singlePaymentTop{
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.singlePayment .paymentItem{
+    flex: 3;
+}
+
+.singlePayment .paymentItem h4{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14.2044px;
+    margin: 0px;
+    text-align: left;
+}
+
+
+.singlePaymentTop .paymentItem{
+    flex: 3;
+}
+
+.singlePaymentTop .paymentItem h5{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16.2044px;
+    margin: 0px;
+    text-align: left;
+}
+
+
+/*
+Admin Payment Component
+*/
+
+.adminPayment{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    background: #F6F6F6;
+}
+
+.adminPaymentHolder{
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: flex-start;
+    background: #F6F6F6;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-top: 32px;
+}
+
+.adminPaymentTopContent{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 24px;
+}
+
+
+/*
+Admin Left Payment Component
+*/
+
+.adminLeftPayment{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 24px;
+    border-radius: 7.62524px;
+    border: 1px solid #82859B;
+    margin-right: 24px;
+}
+
+.adminLeftPayment select{
+    border: none;
+    box-sizing: border-box;
+    border-radius: 7.62524px;
+    height: 45px;
+    font-family: 'DM Sans';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16.3006px;
+    line-height: 24px;
+    color: #82859B;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+    background: #E41F26;
+    color: #FFFFFF;
+}
+
+.adminLeftPayment button{
+    width: 100%;
+}
+
+.adminLeftPayment .searchButton{
+    margin-top: 34px;
+}
+
+.adminLeftPayment .clearButton{
+    margin-top: 20px;
+}
+
+
+
+/*
+Admin Payments Component
+*/
+
+.adminPayments{
+    width: 100%;
+    margin-left: 24px;
+}
+
+
+
+
+/*
+Inner Image
+*/
+
+.navImage{
+    width: 60px;
+    height: 54px;
+    max-width: 60px;
+    max-height: 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 22px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+    margin-right: 16px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.navImage .innerImage{
+    max-width: 25px;
+    max-height: 25px;
 }
