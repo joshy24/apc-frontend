@@ -15,17 +15,17 @@ const AdminPaymentFilter = ({setPaymentType, payment_type}) => {
     return <div className={styles.adminPaymentFilter}>
         <div className={styles.paymentFilterOption} onClick={e => setOption(e,"all")}>
             <Image className={styles.image} src={payment_type == "all" ? "/images/full_radio.png" : "/images/blank_radio.png"} width={16} height={16} />
-            <label for="all">All</label>
+            <label htmlFor="all">All</label>
         </div>
 
         <div className={styles.paymentFilterOption} onClick={e => setOption(e,"paid")}>
             <Image className={styles.image} src={payment_type == "paid" ? "/images/full_radio.png" : "/images/blank_radio.png"} width={16} height={16} />
-            <label for="paid">Paid</label>
+            <label htmlFor="paid">Paid</label>
         </div>
         
         <div className={styles.paymentFilterOption} onClick={e => setOption(e,"not_paid")}>
             <Image className={styles.image} src={payment_type == "not_paid" ? "/images/full_radio.png" : "/images/blank_radio.png"} width={16} height={16} />
-            <label for="not_paid">Not Paid</label>
+            <label htmlFor="not_paid">Not Paid</label>
         </div>
     </div>
 }
