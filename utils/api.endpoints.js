@@ -16,6 +16,8 @@ export const ADMIN_SEARCH_PROFILES_ID = "/api/v1/admin/search_profiles_id/"
 
 export const ADMIN_GET_PAYMENTS = "/api/v1/admin/get_payments/"
 
+export const ADMIN_COUNT_PAYMENTS = "/api/v1/admin/counts_payments/"
+
 export const ADMIN_SEARCH_PAYMENTS = "/api/v1/admin/search_payments/"
 
 export const CREATE_PAYMENT = "/api/v1/admin/create_payment/"

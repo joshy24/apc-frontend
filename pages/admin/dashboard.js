@@ -29,7 +29,7 @@ const Dashboard = () => {
 
             <div className={styles.dashboardLeftContent}>
                 {
-                    (nav == "dashboard") && <Home />
+                    (nav == "dashboard") && <Home setNav={setNav} />
                 }
                 {
                     (nav == "search") && <AdminSearch setMessage={setMessage} setLoading={setLoading} />

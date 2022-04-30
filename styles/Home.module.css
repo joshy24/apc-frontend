@@ -1345,3 +1345,100 @@ Inner Image
     max-width: 25px;
     max-height: 25px;
 }
+
+
+
+
+
+/*
+Dashboard Component
+*/
+
+.home{
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 24px;
+}
+
+.home .homeTopContent{
+    display: flex;
+    justify-content: space-between;
+}
+
+.home .homeTopContent .homeSearchInput{
+    width: 70%;
+}   
+
+.home .homeTopContent .homeSearchInput:hover{
+    cursor: pointer;
+}   
+
+.home .payments_count_text{
+    margin-top: 40px;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.homeContentHolder{
+    display: flex;
+    width: 100%;
+    padding: 24px;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.homeContentHolder .homeContentItem{
+    border-radius: 8px;
+    box-shadow: -11.4052px 24.4397px 16.2931px rgba(0, 0, 0, 0.05);
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.homeContentHolder .homeContentItem .homeContentItemInnerItem{
+    max-height: 120px;
+    height: 120px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-top: 1px solid #FFFFFF;
+    background: #FFFFFF;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.homeContentHolder .homeContentItem .homeContentItemImageItem{
+    max-height: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #E41F26;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.homeContentHolder .homeContentItem .homeContentItemInnerItem h4{
+    font-weight: 400;
+    font-size: 16px;
+    color: #82859B;
+    margin: 0px;
+}
+
+.homeContentHolder .homeContentItem .homeContentItemInnerItem h3{
+    font-weight: 600;
+    font-size: 26px;
+    color: #33A454;
+    margin: 0px;
+    margin-bottom: 8px;
+}
+
+.homeContentHolder .homeContentItem:hover{
+    cursor: pointer;
+}

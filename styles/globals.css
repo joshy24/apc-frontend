@@ -15,3 +15,17 @@ a {
 * {
   box-sizing: border-box;
 }
+
+
+h1 h2 h3 h4 h5 h6{
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+}
+
+button:hover{
+  cursor: pointer;
+}   
+
+input:hover{
+  cursor: pointer;
+}   
