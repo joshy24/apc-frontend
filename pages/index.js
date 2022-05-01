@@ -36,7 +36,7 @@ const Payee = () => {
         </Head>
 
         <PayeeSearch setMembers={showMembers} setMessage={setMessage} setMember={showMember} setLoading={setLoading} />
-        <PayeeResultsHolder setMembers={setMembers} setLoading={setLoading} setMessage={setMessage} member={member} members={members} setMember={showMember} setMembers={showMembers} />
+        <PayeeResultsHolder setLoading={setLoading} setMessage={setMessage} member={member} members={members} setMember={showMember} setMembers={showMembers} />
 
         {
             loading && <Loading show={loading} /> 
