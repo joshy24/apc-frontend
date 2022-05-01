@@ -5,11 +5,16 @@ import Image from "next/image"
 
 import { getAmount } from "../../utils/helper"
 
-const PayeeProfile = ({payee, setAmount, setMember}) => {
-
+const PayeeProfile = ({payee, setAmount, setMember, setMessage}) => {
+    
     const showAmount = (e) => {
         e.preventDefault();
-        setAmount(payee)
+        if(payee.status == "not_paid"){
+            setAmount(payee)
+        }
+        if(payee.status == "paid"){
+            setMessage({message: "You have already paid this fee", visible: true, type: "INFO", title: "Payment Made"})
+        }
     }
 
     const removeMember = (e) => {
@@ -53,7 +58,7 @@ const PayeeProfile = ({payee, setAmount, setMember}) => {
 
                 <div className={styles.payeeDetail}>
                     <h6>Status</h6>
-                    <h5>{payee.status}</h5>
+                    <h5>{payee.status == "not_paid" ? "pending" : payee.status}</h5>
                 </div>
             </div>
             

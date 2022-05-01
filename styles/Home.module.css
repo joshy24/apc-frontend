@@ -577,6 +577,44 @@ Payee Amount Component
 }
 
 
+/*
+Payee Payment Success
+*/
+
+.paymentSuccess{
+    background: #FFFFFF;
+    box-shadow: -11.4052px 24.4397px 16.2931px rgba(0, 0, 0, 0.05);
+    border-radius: 8.14657px;
+    padding: 34px;
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.paymentSuccess .topContent{
+    display: flex;
+    align-items: content;
+    justify-content: flex-end;
+    width: 100%;
+}   
+
+.paymentSuccess h4{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 42px;
+    color: #222128;
+}
+
+.paymentSuccess button{
+    margin-top: 50px;
+}
 
 
 

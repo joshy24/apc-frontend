@@ -7,10 +7,10 @@
 			"path": "../../../VirtualVisitsBackend"
 		},
 		{
-			"path": "../../../glam-central"
+			"path": "../../../RecipePlatform"
 		},
 		{
-			"path": "../../../RecipePlatform"
+			"path": "../../../VirtualVisits/virtual-visits"
 		}
 	],
 	"settings": {}

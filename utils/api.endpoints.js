@@ -4,6 +4,8 @@ export const SEARCH_MEMBER_ID = "/api/v1/payee/search_id/"
 
 export const SEARCH_PROFILE = "/api/v1/payee/search_profile/"
 
+export const VERIFY_TRANSACTION = "/api/v1/payee/verify_transaction/"
+
 
 
 //ADMIN
