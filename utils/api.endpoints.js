@@ -1,4 +1,6 @@
-export const BASE_URL = "https://apc-api-ng.herokuapp.com"
+//export const BASE_URL = "https://apc-api-ng.herokuapp.com"
+
+export const BASE_URL = "http://localhost:3999"
 
 export const SEARCH_MEMBER_ID = "/api/v1/payee/search_id/"
 
@@ -13,6 +15,8 @@ export const VERIFY_TRANSACTION = "/api/v1/payee/verify_transaction/"
 export const ADMIN_LOGIN = "/api/v1/admin/login/"
 
 export const ADMIN_SEARCH_PROFILES = "/api/v1/admin/search_profiles/"
+
+export const ADMIN_SEARCH_PROFILES_NAME = "/api/v1/admin/search_profiles_name/"
 
 export const ADMIN_SEARCH_PROFILES_ID = "/api/v1/admin/search_profiles_id/"
 

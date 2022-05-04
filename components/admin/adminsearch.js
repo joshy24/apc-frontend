@@ -97,11 +97,13 @@ const AdminSearch = ({setLoading, setMessage}) => {
             }
             else{
                 //show search error message
+                setMessage({message: "An error occurred processing the request", visible: true, type: "ERROR"})
             }
         }
         catch(err){
             setLoading(false);
             //show search error message
+            setMessage({message: "An error occurred processing the request", visible: true, type: "ERROR"})
         }
     }
 
@@ -171,7 +173,7 @@ const AdminSearch = ({setLoading, setMessage}) => {
         
         if(payment && payment._id){
             let url = BASE_URL+ADMIN_SEARCH_PROFILES+"?payment_id="+payment._id+"&payment_status="+new_type
-
+            console.log(url)
             if(state && state!=base_state){
                 url+="&state="+state
 
