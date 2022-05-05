@@ -79,7 +79,7 @@ const CreatePayment = ({setMessage, setLoading, paymentCreated, setCreatePayment
         <div className={styles.paymentModalInnerContent}>
             <div className={styles.paymentModalTopcontent}>
                 <h2>Create Payment</h2>
-                <button onClick={setCreatePaymentInvisible} className={styles.greyButton}>Cancel</button>
+                <button onClick={setCreatePaymentInvisible} className={styles.closeBtn}></button>
             </div>
             
             <div className={styles.paymentItem}>

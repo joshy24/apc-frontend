@@ -1,7 +1,6 @@
+import styles from "../../styles/Home.module.css"
 
-import styles from "../../../styles/Home.module.css"
-
-const AdmintopSearch = ({search_option, setSearchValue, search_value, setSearchOption, performSearch, clearSearchOptions, performExport}) => {
+const MobileTopSearch = ({hideMobileFilter, search_option, setSearchValue, search_value, setSearchOption, performSearch, clearSearchOptions, performExport}) => {
 
     function onSearchValueChanged(event){
         const target = event.target;
@@ -19,7 +18,7 @@ const AdmintopSearch = ({search_option, setSearchValue, search_value, setSearchO
         setSearchOption(value)
     }
 
-    return <div className={styles.adminTopSearch}>
+    return <div className={styles.mobileTopSearch}>
         
         <div className={styles.adminTopSearchSearch}>
             <select value={search_option} onChange={onSearchOptionChanged} className={styles.search_option} name="search_option" id="search_option">
@@ -38,4 +37,4 @@ const AdmintopSearch = ({search_option, setSearchValue, search_value, setSearchO
     </div>
 }
 
-export default AdmintopSearch;
+export default MobileTopSearch;

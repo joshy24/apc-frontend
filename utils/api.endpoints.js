@@ -1,6 +1,6 @@
-//export const BASE_URL = "https://apc-api-ng.herokuapp.com"
+export const BASE_URL = "https://apc-api-ng.herokuapp.com"
 
-export const BASE_URL = "http://localhost:3999"
+//export const BASE_URL = "http://localhost:3999"
 
 export const SEARCH_MEMBER_ID = "/api/v1/payee/search_id/"
 

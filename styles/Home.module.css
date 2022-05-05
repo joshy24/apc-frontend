@@ -187,8 +187,8 @@ General Styles
 }
 
 .paymentModalInnerContent{
-    min-width: 500px;
-    width: 600px;
+    max-width: 500px;
+    width: 100%;
     padding: 24px;
     background: #FFFFFF;
     max-height: 100vh;
@@ -259,6 +259,14 @@ General Styles
     font-size: 17.2044px;
     margin-top: 24px;
     text-align: center;
+}
+
+.memberId{
+    color: #3AA7D5;
+}
+
+.memberAmount{
+    color: #33A454;
 }
 
 
@@ -791,7 +799,7 @@ Admin LeftSearch Component
     padding: 24px;
 }
 
-.adminLeftSearch select{
+.adminLeftStateSearch select{
     border: none;
     box-sizing: border-box;
     border-radius: 7.62524px;
@@ -809,19 +817,19 @@ Admin LeftSearch Component
     color: #FFFFFF;
 }
 
-.adminLeftSearch .btnSearch{
+.adminLeftStateSearch .btnSearch{
     margin-top: 30px;
     width: 100%;
     margin-bottom: 20px;
 }
 
-.adminLeftSearch .btnClear{
+.adminLeftStateSearch .btnClear{
     
     width: 100%;
     margin-bottom: 20px;
 }
 
-.adminLeftInnerContent{
+.adminLeftStateSearch{
     background: #FFFFFF;
     padding: 20px;
     border-radius: 7.62524px;
@@ -913,8 +921,8 @@ Admin Members Component
 
 .adminMembers{
     width: 100%;
-    height: 100vh;
     margin-top: 24px;
+    justify-content: space-between;
 }
 
 
@@ -965,7 +973,7 @@ Admin Member Component
     font-family: 'DM Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 12.1889px;
+    font-size: 14.1889px;
     line-height: 16px;
     color: #222128;
     margin: 0px;
@@ -976,33 +984,6 @@ Admin Member Component
     min-width: 100px;
 }
 
-.adminMember .memberId{
-    color: #3AA7D5;
-}
-
-.adminMember .memberAmount{
-    color: #33A454;
-}
-
-.adminMember .memberName{
-    
-}
-
-.adminMember .memberState{
-    
-}
-
-.adminMember .memberLga{
-    
-}
-
-.adminMember .memberStatus{
-    
-}
-
-.adminMember .memberDatePaid{
-    
-}
 
 
 
@@ -1099,7 +1080,7 @@ Nav Component
 Dashboard
 */
 
-.dashboardLeftContent{
+.dashboardRightContent{
     margin-left: 220px;
     width: 100%;
 }
@@ -1191,12 +1172,13 @@ Create Payment Component
 
 .createPayment .paymentItem .generalInputField{
     width: 50%;
-    min-width: 200px;
+    min-width: 150px;
 }
 
 .createPayment .saveButton{
     width: 50%;
     margin-top: 20px;
+    min-width: 150px;
 }
 
 
@@ -1423,7 +1405,7 @@ Dashboard Component
     padding: 24px;
     justify-content: space-around;
     align-items: center;
-
+    flex-wrap: wrap;
 }
 
 .homeContentHolder .homeContentItem{
@@ -1434,6 +1416,7 @@ Dashboard Component
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-bottom: 24px;
 }
 
 .homeContentHolder .homeContentItem .homeContentItemInnerItem{
@@ -1480,3 +1463,436 @@ Dashboard Component
 .homeContentHolder .homeContentItem:hover{
     cursor: pointer;
 }
+
+
+
+
+/*
+Mobile Search Profile
+*/
+
+.modileSearchMember{
+    max-width: 400px;
+    width: 250px;
+    min-width: 20px;
+    max-height: 300px;
+    padding: 24px;
+    background: #FFFFFF;
+    border-radius: 5.07869px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0px 8px 16px 8px;
+    box-shadow: -11.4052px 24.4397px 16.2931px rgba(0, 0, 0, 0.05);
+}
+
+.modileSearchMember .mobileSearchMemberHorizontalHolder{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 26px;
+}
+
+.modileSearchMember .mobileSearchMemberHorizontalHolder div{
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.modileSearchMember .modileSearchMemberName{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18.1889px;
+    color: #222128;
+    margin: 0px 0px 4px 0px;
+}
+
+.modileSearchMember .modileSearchMemberTitle{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14.1889px;
+    color: #222128;
+    margin: 0px 0px 8px 0px;
+}
+
+.modileSearchMember h5{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.1889px;
+    line-height: 16px;
+    color: #222128;
+    margin: 0px;
+}
+
+.modileSearchMember .paidText{
+    margin: 0px;
+}
+
+.modileSearchMember .notPaidText{
+    margin: 0px;
+}
+
+
+
+/*
+Mobile Right Nav
+*/
+.mobileRightNav{
+    width: 100%;
+    padding: 24px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+
+/*
+Mobile Search Filter Compopnent
+*/
+.mobileSearchFilter{
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 10;
+    position: fixed;
+}
+
+.mobileSearchFilter .mobileSearchFilterTopContent{
+    max-width: 700px;
+    min-width: 300px;
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 24px;
+    height: 90vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    overflow-y: scroll;
+}
+
+.mobileSearchFilter .closeContent{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.mobileSearchFilterHolder{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+
+.mobileNav{
+    display: none;
+}
+
+
+/*
+Mobile Queries
+*/
+@media screen and (max-width: 1200px) {
+    
+    .adminMember{
+        display: none;
+    }
+
+    .modileSearchMember{
+        display: flex;
+    }
+
+    .adminMemberHeader{
+        display: none;
+    }
+
+    .adminMembers{
+        display: flex;
+        
+        flex-wrap: wrap;
+    }
+
+    .adminLeftContent{
+        display: none;
+    }
+
+    .adminRightContent{
+        width: 100%;
+    }
+
+    .mobileRightNav{
+        display: flex;
+    }
+
+    .adminTopSearch{
+        display: none;
+    }
+
+    .adminLeftStateSearch{
+        max-width: 300px;
+        width: 300px;
+        min-width: 200px;
+        padding: 0px 24px 24px 24px;
+        margin: 8px 0px 8px 0px;
+    }
+
+    .adminSearchPayment{
+        max-width: 300px;
+        width: 300px;
+        min-width: 200px;
+        min-height: 373px;
+        margin: 8px 0px 8px 0px;
+    }
+
+    .adminLeftStateSearch .btnClear{
+        margin-bottom: 0px;
+    }
+
+    .adminPaymentFilter{
+        max-width: 300px;
+        width: 300px;
+        min-width: 200px;
+        min-height: 373px;
+        margin: 8px 0px 8px 0px;
+    }
+
+
+    /*
+    Admin Top Search
+    */
+    .mobileTopSearch{
+        padding: 24px;
+        max-width: 300px;
+        width: 300px;
+        min-width: 200px;
+        min-height: 373px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background: #FFFFFF;
+        border-radius: 8px;
+        border: 1px solid #82859B;
+        margin: 8px 0px 8px 0px;
+    }
+    
+    .mobileTopSearch button{
+        width: 100%;
+    }
+
+    .adminTopSearchSearch{
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .adminTopSearchSearch select{
+        margin-right: 0px;
+        width: 100%;
+        margin-bottom: 16px;
+    }
+    
+    .adminTopSearchSearch input{
+        margin-right: 0px;
+        width: 100%;
+        margin-bottom: 16px;
+    }
+    
+    .adminTopSearchSearch button{
+        margin-right: 0px;
+        width: 100%;
+        margin-bottom: 16px;
+    }
+
+    .mobileSearchFilter{
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .nav{
+        display: none;
+    }
+
+    .adminRightContent{
+        width: 100%;
+    }
+
+    .dashboardRightContent{
+        margin-left: 0px;
+        width: 100%;
+    }
+
+    .mobileSearchFilterHolder{
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        align-items: center;
+        flex-direction: column;
+        background: #FFFFFF;
+        border-radius: 8px;
+        height: 100vh;
+        overflow-y: scroll;
+    }
+
+    .adminDashboard .adminDashboardContent{
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+
+
+    /*
+    Mobile Nav Component
+    */
+    .mobileNav{
+        width: 100%;
+        padding: 8px 24px 8px 24px;
+        margin: 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #FFFFFF;
+        box-shadow: -11.4052px 24.4397px 16.2931px rgba(0, 0, 0, 0.05);
+    }
+
+    .mobileNav .mobileNavLogoName{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .mobileNav .mobileNavLogoName .mobileNavLogo{
+        border-radius: 50%;
+    }
+
+    .mobileNav .mobileNavLogoName h4{
+        margin-left: 16px;
+
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18.1889px;
+        color: #222128;
+    }
+    
+    .mobileNav .mobileNavMenuBtn{
+        background: url("/images/menu.png");
+        background-position: center;
+        background-size: contain;
+        width: 40px;
+        height: 40px;
+        border: none;
+    }
+
+
+
+    /*
+    Mobile Nav Menu Component
+    */
+    .mobileNavMenu{
+        height: 100vh;
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 30px;
+        background: #FFFFFF;
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin: 0px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        z-index: 10;
+    }
+    
+    .mobileNavMenu .navItem{
+        display: flex;
+        width: 100%;
+        margin-bottom: 8px;
+        align-items: center;
+    }
+    
+    .mobileNavMenu .navItem:hover{
+        cursor: pointer;
+    }
+    
+    .mobileNavMenu .navItem h5{
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18.2044px;
+        line-height: 24px;
+        /* identical to box height */
+    
+    
+        /* Off blue */
+    
+        color: #82859B;
+    }
+    
+    .mobileNavMenu .mobileNavMenuHolder{
+        padding-right: 40px;
+        margin-top: 30px;
+    }
+
+    .mobileNavMenu .mobileNavMenuTopContent{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 24px 0px 24px;
+    }
+
+    .mobileNavMenu .mobileNavLogoName{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .mobileNavMenu .mobileNavLogoName .mobileNavLogo{
+        border-radius: 50%;
+    }
+
+    .mobileNavMenu .mobileNavLogoName h4{
+        margin-left: 16px;
+
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18.1889px;
+        color: #222128;
+    }
+}
+

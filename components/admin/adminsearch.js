@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import AdmintopSearch from "./search/admintopsearch"
 import AdminMembers from "./search/adminmembers"
 import AdminLeftSearch from "./search/adminleftsearch"
-import ChangePayment from "../changepayment"
+import ChangePayment from "./changepayment"
+import MobileSearchtNav from "../mobile/mobilesearchnav"
+import MobileSearchFilter from "../mobile/mobilesearchfilter"
 
 import styles from "../../styles/Home.module.css"
 
@@ -31,12 +33,15 @@ const AdminSearch = ({setLoading, setMessage}) => {
 
     const [showPayment, setShowPayment] = useState(true)
 
+    const [mobileFilter, setMobileFilter] = useState(false)
+
 
     useEffect(() => {
         //performSearch();
     }, [])
 
     const performSearch = async () => {
+        hideMobileFilter()
         if(search_option == "member_id"){
             let url = BASE_URL+ADMIN_SEARCH_PROFILES_ID+"?member_id="+search_value
 
@@ -116,6 +121,7 @@ const AdminSearch = ({setLoading, setMessage}) => {
         //fetch mambers 
         setPayment(new_payment)
         setShowPayment(false)
+        hideMobileFilter();
 
         let url = BASE_URL+ADMIN_SEARCH_PROFILES+"?payment_id="+new_payment._id+"&payment_status="+payment_type
 
@@ -135,6 +141,7 @@ const AdminSearch = ({setLoading, setMessage}) => {
     }
 
     const clearStateLga = () => {
+        hideMobileFilter();
         setState(base_state)
         setLga(base_lga);
         setLgas([])
@@ -151,6 +158,8 @@ const AdminSearch = ({setLoading, setMessage}) => {
     }
 
     const clearSearchOptions = () => {
+        hideMobileFilter();
+
         setSearchValue("");
 
         if(payment && payment._id){
@@ -169,11 +178,12 @@ const AdminSearch = ({setLoading, setMessage}) => {
     }
 
     const onPaymentTypeChanged = (new_type) => {
+        hideMobileFilter();
         setPaymentType(new_type);
         
         if(payment && payment._id){
             let url = BASE_URL+ADMIN_SEARCH_PROFILES+"?payment_id="+payment._id+"&payment_status="+new_type
-            console.log(url)
+           
             if(state && state!=base_state){
                 url+="&state="+state
 
@@ -189,6 +199,14 @@ const AdminSearch = ({setLoading, setMessage}) => {
             doSearch(url)
         }
     }
+
+    function showMobileFilter(){
+        setMobileFilter(true)
+    }
+
+    function hideMobileFilter(){
+        setMobileFilter(false)
+    }
     
     return <div className={styles.adminSearch}>
 
@@ -197,6 +215,11 @@ const AdminSearch = ({setLoading, setMessage}) => {
         </div>
 
         <div className={styles.adminRightContent}>
+
+            { mobileFilter && <MobileSearchFilter hideMobileFilter={hideMobileFilter} setSearchValue={setSearchValue} setSearchOption={setSearchOption} search_value={search_value} search_option={search_option} clearSearchOptions={clearSearchOptions} performExport={performExport} performSearch={performSearch} payment={payment}  setShowPayment={setShowPayment} payment_type={payment_type} setPaymentType={onPaymentTypeChanged} clearStateLga={clearStateLga} lga={lga} state={state} lgas={lgas} setState={setState} setLga={setLga} setLgas={setLgas} /> }
+
+            <MobileSearchtNav showMobileFilter={showMobileFilter} />
+
             <AdmintopSearch setSearchValue={setSearchValue} setSearchOption={setSearchOption} search_value={search_value} search_option={search_option} clearSearchOptions={clearSearchOptions} performExport={performExport} performSearch={performSearch} />
             
             <AdminMembers members={members} />

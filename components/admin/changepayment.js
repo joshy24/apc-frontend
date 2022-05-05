@@ -1,13 +1,13 @@
 
-import styles from "../styles/Home.module.css"
+import styles from "../../styles/Home.module.css"
 
 
-import {postRequest, getRequest} from "../utils/api.requests"
+import {postRequest, getRequest} from "../../utils/api.requests"
 
-import {BASE_URL, ADMIN_GET_PAYMENTS} from "../utils/api.endpoints"
+import {BASE_URL, ADMIN_GET_PAYMENTS} from "../../utils/api.endpoints"
 import { useEffect, useState } from "react"
 
-import { getDate, getAmount } from "../utils/helper"
+import { getDate, getAmount } from "../../utils/helper"
 
 const ChangePayment = ({setLoading, paymentChanged, setShowPayment}) => {
 
@@ -53,7 +53,7 @@ const ChangePayment = ({setLoading, paymentChanged, setShowPayment}) => {
         <div className={styles.paymentModalInnerContent}>
             <div className={styles.paymentModalTopcontent}>
                 <h2>Select Payment</h2>
-                <button onClick={hidePayment} className={styles.greyButton}>Cancel</button>
+                <button onClick={hidePayment} className={styles.closeBtn}></button>
             </div>
             <div className={styles.payment}>
                 <h5>Amount</h5>
