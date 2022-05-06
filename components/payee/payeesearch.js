@@ -84,6 +84,7 @@ const PayeeSearch = ({setMembers, setMember, setLoading, setMessage}) => {
             }
         }
         catch(err){
+            console.log(err)
             setMessage({message: "An error occurred getting your profile.", visible: true, type: "ERROR"})
             setLoading(false)
         }

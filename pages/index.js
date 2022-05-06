@@ -19,14 +19,22 @@ const Payee = () => {
     const [loading, setLoading] = useState(false)
     const [message, setMessage] = useState({visible: false, message: "", title: "", type: ""})
 
+    const [showMobileResults, setShowMobileResults] = useState(false)
+
     const showMember = (mem) => {
         //setMembers([])
         setMember(mem)
+        showOnMobile(mem ? true : false)
     }
 
     const showMembers = (list) => {
         setMembers(list)
         setMember(null)
+        showOnMobile((list && list.length > 0) ? true : false)
+    }
+
+    const showOnMobile = (value) => {
+        setShowMobileResults(value)
     }
 
     return <div className={styles.topContent}>
@@ -36,7 +44,8 @@ const Payee = () => {
         </Head>
 
         <PayeeSearch setMembers={showMembers} setMessage={setMessage} setMember={showMember} setLoading={setLoading} />
-        <PayeeResultsHolder setLoading={setLoading} setMessage={setMessage} member={member} members={members} setMember={showMember} setMembers={showMembers} />
+        
+        <PayeeResultsHolder showOnMobile={showOnMobile} showMobileResults={showMobileResults} setLoading={setLoading} setMessage={setMessage} member={member} members={members} setMember={showMember} setMembers={showMembers} />
 
         {
             loading && <Loading show={loading} /> 

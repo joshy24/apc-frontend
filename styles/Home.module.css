@@ -411,7 +411,7 @@ payee Results Component
     margin-left: 50px;
     margin-right: 50px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     align-items: center;
     margin-top: 200px;
@@ -461,7 +461,7 @@ Payee Search Component
     height: 45px;
     padding-left: 16px;
     background: #F6F6F6;
-    border: 0px;
+    border: 1.52505px solid #82859B;
     color: #82859B;
     font-family: 'DM Sans', sans-serif;
     font-weight: 400;
@@ -471,7 +471,7 @@ Payee Search Component
 }
 
 
-.orContent{
+.payeeSearch .orContent{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -480,7 +480,7 @@ Payee Search Component
     margin-bottom: 0px;
 }
 
-.orContent hr{
+.payeeSearch .orContent hr{
     width: 6px;
     color: #82859B;
     background: #82859B;
@@ -489,7 +489,7 @@ Payee Search Component
     margin: 0px;
 }
 
-.orContent h2{
+.payeeSearch .orContent h2{
     color: #E41F26;
     font-family: 'DM Sans', sans-serif;
     font-weight: 400;
@@ -1659,6 +1659,13 @@ Mobile Search Filter Compopnent
 }
 
 
+/*.showDisplayHolderOnMobile{
+    display: none;
+}*/
+
+
+
+
 /*
 Mobile Queries
 */
@@ -1905,6 +1912,45 @@ Mobile Queries
 
 
 
+@media screen and (max-width: 800px) {
+    .payeeSearch{
+        background: #FFFFFF;
+        display: flex;
+        align-items: top;
+        justify-content: flex-start;
+        padding-top: 50px;
+        padding-right: 24px;
+        padding-left: 24px;
+        padding-bottom: 30px;
+        width: 100%;
+        overflow-y: scroll;
+    }
+
+    .payeeResultsHolder{
+        display: flex;
+        width: 100%;
+        overflow-y: scroll;
+    }
+
+    .payeeSearch h1{
+        font-size: 28px;
+        font-style: normal;
+        margin-top: 40px;
+    }
+    
+    .payeeSearch .enterText{
+        margin-top: 40px;
+    }
+
+    .payeeSearch select{
+        width: 47%;
+        font-style: normal;
+        font-size: 14.3006px;
+    }
+}   
+
+
+
 @media screen and (max-width: 830px) {
     .adminPaymentButtonHolder{
         display: flex;
@@ -1921,7 +1967,72 @@ Mobile Queries
 }
 
 
+@media screen and (max-width: 480px) {
+    .payeeSearch .membershipIDContent{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .payeeSearch .inputField{
+        width: 100%;
+        margin-right: 0px;
+        margin-bottom: 8px;
+    }
+
+    .payeeSearch button{
+        width: 100%;
+    }
+
+    .payeeSearch .stateLga{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 16px;
+    }
+    
+    .payeeSearch select{
+        width: 100%;
+        margin-bottom: 16px;
+    }
+}
+
+
 @media screen and (max-width: 660px) {
+
+    /*
+    Payee Search Mobile
+    */
+
+    .payeeResultsHolder{
+        display: none;
+    }
+
+    .showDisplayHolderOnMobile{
+        background: #33A454;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0px;
+        height: 100vh;
+        overflow-y: scroll;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 10;
+        padding: 0px 16px 0px 16px;
+    }
+
+
+    /*
+    Payee Search Mobile End
+    */
+
+
     .dashboardRightContent{
         margin-top: 100px;
     }
