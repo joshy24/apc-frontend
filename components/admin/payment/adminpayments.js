@@ -8,6 +8,9 @@ const AdminPayments = ({payments, setPaymentActive}) => {
     return <div className={styles.adminPayments}>
         <div className={styles.singlePaymentTop}>
             <div className={styles.paymentItem}>
+                <h5>Name</h5>
+            </div>
+            <div className={styles.paymentItem}>
                 <h5>Amount</h5>
             </div>
             <div className={styles.paymentItem}>

@@ -12,7 +12,7 @@ import { lgas_list } from "../../utils/helper"
 const base_state = "Select a State";
 const base_lga = "Select an LGA";
 
-const PayeeSearch = ({setMembers, setMember, setLoading}) => {
+const PayeeSearch = ({setMembers, setMember, setLoading, setMessage}) => {
 
     const [memberId, setMemberId] = useState("")
     const [name, setName] = useState("")
@@ -80,12 +80,12 @@ const PayeeSearch = ({setMembers, setMember, setLoading}) => {
                 setMember(profile.data)
             }
             else{
-                console.log("Error getting member from id")
+                setMessage({message: "Your profile was not retrieved. Try again later.", visible: true, type: "ERROR"})
             }
         }
         catch(err){
+            setMessage({message: "An error occurred getting your profile.", visible: true, type: "ERROR"})
             setLoading(false)
-            console.log({err})
         }
     }
 
@@ -147,12 +147,12 @@ const PayeeSearch = ({setMembers, setMember, setLoading}) => {
                 setMembers(profiles.data)
             }
             else{
-                console.log(profiles)
+                setMessage({message: "Your profile was not retrieved. Try again later.", visible: true, type: "ERROR"})
             }
         }
         catch(err){
             setLoading(false)
-            console.log({err})
+            setMessage({message: "An error occurred getting your profile.", visible: true, type: "ERROR"})
         }
     }
     

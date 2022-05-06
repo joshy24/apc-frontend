@@ -56,6 +56,7 @@ const ChangePayment = ({setLoading, paymentChanged, setShowPayment}) => {
                 <button onClick={hidePayment} className={styles.closeBtn}></button>
             </div>
             <div className={styles.payment}>
+                <h5>Name</h5>
                 <h5>Amount</h5>
                 <h5>Date Issued</h5>
                 <h5>Date Due</h5>
@@ -63,6 +64,7 @@ const ChangePayment = ({setLoading, paymentChanged, setShowPayment}) => {
             {
                 payments && payments.map(payment => {
                     return <div key={payment._id} onClick={e => setNewPayment(e, payment)} className={styles.paymentItem}>
+                        <h5>{payment.name}</h5>
                         <h5 className={styles.colorGreen}>{getAmount(payment.amount)}</h5>
                         <h5>{getDate(payment.date_issued)}</h5>
                         <h5>{getDate(payment.date_due)}</h5>

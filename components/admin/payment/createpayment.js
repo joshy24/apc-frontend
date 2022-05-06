@@ -18,25 +18,36 @@ const CreatePayment = ({setMessage, setLoading, paymentCreated, setCreatePayment
 
     const [amount, setAmount] = useState("");
 
+    const [name, setName] = useState("");
+
 
     function onAmountChanged(e){
         setAmount(e.target.value)
     }
 
+    function onNameChanged(e){
+        setName(e.target.value)
+    }
+
     const savePayment = async() => {
 
+        if(!amount || amount.length == 0){
+            setMessage({message: "Enter a valid Payment Name to proceed", type: "ERROR", title: "Invalid Name", visible: true})
+            return
+        }
+
         if(!amount || amount <= 0 || amount.length == 0){
-            setMessage({message: "Enter a valid Amount to proceed", type: "INFO", title: "Invalid Amount", visible: true})
+            setMessage({message: "Enter a valid Amount to proceed", type: "ERROR", title: "Invalid Amount", visible: true})
             return
         }
 
         if(!date_issued){
-            setMessage({message: "Enter a valid Date Issued", type: "INFO", title: "Invalid Date Issued", visible: true})
+            setMessage({message: "Enter a valid Date Issued", type: "ERROR", title: "Invalid Date Issued", visible: true})
             return
         }
 
         if(!date_due){
-            setMessage({message: "Enter a valid Date Due", type: "INFO", title: "Invalid Date Due", visible: true})
+            setMessage({message: "Enter a valid Date Due", type: "ERROR", title: "Invalid Date Due", visible: true})
             return;
         }
 
@@ -45,7 +56,7 @@ const CreatePayment = ({setMessage, setLoading, paymentCreated, setCreatePayment
 
             setLoading(true)
 
-            let result = await postRequest(url, {amount,date_due, date_issued})
+            let result = await postRequest(url, {name, amount,date_due, date_issued})
             
             setLoading(false)
 
@@ -82,6 +93,11 @@ const CreatePayment = ({setMessage, setLoading, paymentCreated, setCreatePayment
                 <button onClick={setCreatePaymentInvisible} className={styles.closeBtn}></button>
             </div>
             
+            <div className={styles.paymentItem}>
+                <h5>Name</h5>
+                <input type="text" value={name} onChange={onNameChanged} className={styles.generalInputField} placeholder="Enter Payment Name" />
+            </div>
+
             <div className={styles.paymentItem}>
                 <h5>Amount</h5>
                 <input type="number" value={amount} onChange={onAmountChanged} className={styles.generalInputField} placeholder="Enter Amount" />

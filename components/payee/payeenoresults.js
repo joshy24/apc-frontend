@@ -5,11 +5,13 @@ import Image from "next/image"
 const PayeeNoResults = () => {
 
     return <div className={styles.payeeNoResults}>
-        <Image className={styles.payeeNoResultsImage} src="/images/search_img.png" width={170} height={150}/>
+        <div className={styles.payeeNoResultsImage}>
+            <Image className={styles.payeeNoResultsImage} src="/images/logo.webp" width={200} height={200}/>
+        </div>
 
-        <h1>No Results Found</h1>
+        <h1>APC Membership Portal</h1>
 
-        <h5>Enter your membership ID or search for your profile to get started.</h5>
+        <h5>Enter your membership ID or search for your profile to make payment.</h5>
     </div>
 
 }

@@ -47,6 +47,21 @@ General Styles
     text-align: center;
 }
 
+.blueButton{
+    background: #3AA7D5;
+    border-radius: 7.10526px;
+    border: 0px;
+    padding: 12px;
+    width: 183px;
+    height: 45px;
+    color: #FFFFFF;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    text-align: center;
+}
+
 
 
 .payeeDetails{
@@ -187,14 +202,15 @@ General Styles
 }
 
 .paymentModalInnerContent{
-    max-width: 500px;
+    max-width: 700px;
     width: 100%;
-    padding: 24px;
+    padding: 24px 24px 34px 24px;
     background: #FFFFFF;
     max-height: 100vh;
     min-height: 400px;
     border-radius: 8px;
     display: flex;
+    align-items: center;
     flex-direction: column;
     background: #F6F6F6;
 }
@@ -205,6 +221,7 @@ General Styles
     align-items: center;
     height: auto;
     margin-bottom: 24px;
+    width: 100%;
 }
 
 .paymentModalInnerContent .paymentModalTopcontent h2{
@@ -331,7 +348,8 @@ Payee No Results Component
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    max-width: 350px;
+    max-width: 400px;
+    min-width: 240px;
 }
 
 .payeeNoResults h1{
@@ -352,7 +370,16 @@ Payee No Results Component
     font-family: 'DM Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
+    margin-top: 16px;
+}
+
+.payeeNoResults .payeeNoResultsImage{
+    border-radius: 50%;
+    font-size: 18px;
+    width: 201px;
+    height: 201px;
+    border: 3px solid #FFFFFF;
 }
 
 
@@ -1098,7 +1125,7 @@ Change Payment
     font-weight: 400;
     font-size: 16.2044px;
     margin-left: 0px;
-    margin-right: 0px;
+    margin-right: 8px;
     margin-top: 0px;
     margin-bottom: 0px;
     text-align: left;
@@ -1111,6 +1138,7 @@ Change Payment
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    width: 100%;
 }
 
 .changePayment .paymentItem{
@@ -1122,6 +1150,7 @@ Change Payment
     background: #FFFFFF;
     box-shadow: -11.4052px 24.4397px 16.2931px rgba(0, 0, 0, 0.05);
     border-radius: 8.14657px;
+    width: 100%;
 }
 
 .changePayment .paymentItem:hover{
@@ -1134,7 +1163,7 @@ Change Payment
     font-weight: 400;
     font-size: 16.2044px;
     margin-left: 0px;
-    margin-right: 0px;
+    margin-right: 8px;
     margin-top: 0px;
     margin-bottom: 0px;
     text-align: left;
@@ -1150,7 +1179,11 @@ Create Payment Component
 */
 
 .createPayment{
+    overflow-y: scroll;
+}
 
+.createPayment .paymentModalInnerContent{
+    max-width: 500px;
 }
 
 .createPayment h5
@@ -1162,7 +1195,7 @@ Create Payment Component
     margin-left: 0px;
     margin-right: 0px;
     margin-top: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 8px;
     text-align: left;
 }
 
@@ -1171,12 +1204,12 @@ Create Payment Component
 }
 
 .createPayment .paymentItem .generalInputField{
-    width: 50%;
+    width: 250px;
     min-width: 150px;
 }
 
 .createPayment .saveButton{
-    width: 50%;
+    width: 250px;
     margin-top: 20px;
     min-width: 150px;
 }
@@ -1248,7 +1281,6 @@ Admin Payment Component
 
 .adminPayment{
     width: 100%;
-    min-height: 100vh;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -1273,6 +1305,11 @@ Admin Payment Component
     padding-left: 24px;
     padding-right: 24px;
     padding-top: 24px;
+}
+
+.adminPaymentTopContent .mobilePaymentFilterBtn{
+    display: none;
+    margin-right: 16px;
 }
 
 
@@ -1387,6 +1424,7 @@ Dashboard Component
 
 .home .homeTopContent .homeSearchInput{
     width: 70%;
+    margin-left: 24px;
 }   
 
 .home .homeTopContent .homeSearchInput:hover{
@@ -1615,6 +1653,12 @@ Mobile Search Filter Compopnent
 }
 
 
+
+.singlePaymentMobile{
+    display: none;
+}
+
+
 /*
 Mobile Queries
 */
@@ -1734,9 +1778,153 @@ Mobile Queries
     .mobileSearchFilter{
         display: flex;
     }
+
+
+
+    .adminPaymentTopContent .mobilePaymentFilterBtn{
+        display: inline;
+    }
+
+    .singlePaymentTop{
+        display: none;
+    }
+
+    .adminPaymentHolder{
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-top: 32px;
+    }
+
+    .adminPayments{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin: 0px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .singlePayment{
+        display: none;
+    }
+
+    .singlePaymentMobile{
+        max-width: 250px;
+        min-width: 150px;
+        width: 250px;
+        padding: 24px;
+        background: #FFFFFF;
+        border-radius: 5.07869px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        margin: 0px 16px 16px 0px;
+        border: 1.26111px solid #82859B;
+    }
+
+    .singlePaymentMobile .paymentItem{
+        flex: 3;
+    }
+
+    .singlePaymentMobile .paymentItem .paymentName{
+        font-weight: 500;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .singlePaymentMobile .paymentItem .paymentAmount{
+        font-weight: 400;
+        font-size: 16px;
+        text-align: center;
+        margin-top: 8px;
+        margin-bottom: 16px;
+    }
+
+    .singlePaymentMobile .paymentItem h5{
+        font-family: 'DM Sans';
+        font-style: normal;
+        text-align: center;
+        margin: 0px;
+    }
+    
+    .singlePaymentMobile .paymentItem h4{
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14.2044px;
+        margin: 0px 0px 20px 0px;
+        text-align: center;
+    }
+
+
+
+    /*
+    Mobile Payment Filter
+    */
+
+    .adminMobilePaymentFilter{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0,0,0,0.3);
+    }
+
+    .adminMobilePaymentFilter .adminMobilePaymentFilterHolder{
+        width: 400px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        background: #FFFFFF;
+        border-radius: 8px;
+        padding: 24px;
+        height: 90vh;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        overflow-y: scroll;
+    }
+    
+    .adminMobilePaymentFilter .closeContent{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+    }
+
+    .adminLeftPayment{
+        margin-right: 0px;
+    }
 }
 
+
+
+@media screen and (max-width: 830px) {
+    .adminPaymentButtonHolder{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .adminPaymentButtonHolder .mobilePaymentFilterBtn{
+        margin-bottom: 16px;
+    }
+
+    .adminPaymentTopContent .pageTitle{
+        margin-bottom: 16px;
+    }
+}
+
+
 @media screen and (max-width: 660px) {
+    .dashboardRightContent{
+        margin-top: 100px;
+    }
     .nav{
         display: none;
     }
@@ -1784,6 +1972,7 @@ Mobile Queries
         align-items: center;
         background: #FFFFFF;
         box-shadow: -11.4052px 24.4397px 16.2931px rgba(0, 0, 0, 0.05);
+        position: fixed;
     }
 
     .mobileNav .mobileNavLogoName{
@@ -1810,8 +1999,9 @@ Mobile Queries
         background: url("/images/menu.png");
         background-position: center;
         background-size: contain;
-        width: 40px;
-        height: 40px;
+        background-repeat: no-repeat;
+        width: 51px;
+        height: 39px;
         border: none;
     }
 
@@ -1823,7 +2013,7 @@ Mobile Queries
     .mobileNavMenu{
         height: 100vh;
         width: 100%;
-        padding-top: 50px;
+        padding-top: 8px;
         padding-bottom: 30px;
         background: #FFFFFF;
         position: fixed;

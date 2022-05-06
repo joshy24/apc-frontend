@@ -10,6 +10,8 @@ import {postRequest, getRequest} from "../../utils/api.requests"
 import {BASE_URL, ADMIN_SEARCH_PAYMENTS, CREATE_PAYMENT, EDIT_PAYMENT} from "../../utils/api.endpoints"
 import CreatePayment from "./payment/createpayment";
 
+import MobilePaymentFilter from "../mobile/mobilepaymentfilter"
+
 const base_year = new Date().getFullYear()
 const base_month = new Date().getMonth()+1;
 
@@ -24,12 +26,15 @@ const AdminPayment = ({setLoading, setMessage}) => {
 
     const [showCreatePayment, setShowCreatePayment] = useState(false)
 
+    const [mobilePaymentFilter, setMobilePaymentFilter] = useState(false)
+
     useEffect(() => {
         performSearch();
     }, [])
 
     const performSearch = async() => {
-        
+        setMobilePaymentFilter(false);
+
         let url = BASE_URL+ADMIN_SEARCH_PAYMENTS+ ( year ? "?year="+year+"&month="+month : "") 
         
         setLoading(true);
@@ -121,6 +126,14 @@ const AdminPayment = ({setLoading, setMessage}) => {
     const setCreatePaymentInvisible = () => {
         setShowCreatePayment(false)
     }
+
+    const showMobilePaymentFilter = () => {
+        setMobilePaymentFilter(true)
+    }
+
+    const hideMobilePaymentFilter = () => {
+        setMobilePaymentFilter(false)
+    }
     
 
     return <div className={styles.adminPayment}>
@@ -128,7 +141,10 @@ const AdminPayment = ({setLoading, setMessage}) => {
         <div className={styles.adminPaymentTopContent}>
             <h1 className={styles.pageTitle}>Payment</h1>
 
-            <button onClick={setCreatePaymentVisible} className={styles.greenButton}>Create Payment</button>
+            <div className={styles.adminPaymentButtonHolder}>
+                <button onClick={showMobilePaymentFilter} className={`${styles.blueButton} ${styles.mobilePaymentFilterBtn}`}>Filter</button>
+                <button onClick={setCreatePaymentVisible} className={styles.greenButton}>Create Payment</button>
+            </div>
         </div>
 
         <div className={styles.adminPaymentHolder}>
@@ -143,6 +159,10 @@ const AdminPayment = ({setLoading, setMessage}) => {
 
         {
             showCreatePayment && <CreatePayment setMessage={setMessage} setCreatePaymentInvisible={setCreatePaymentInvisible} paymentCreated={paymentCreated} setLoading={setLoading} />
+        }
+
+        {
+            mobilePaymentFilter && <MobilePaymentFilter hideMobilePaymentFilter={hideMobilePaymentFilter} year={year} setYear={setYear} month={month} setMonth={setMonth} performSearch={performSearch} clearSearchOptions={clearSearchOptions} />
         }
 
     </div>
