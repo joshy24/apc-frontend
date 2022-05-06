@@ -6,10 +6,16 @@ import Switch from "react-switch";
 
 import MobilePayment from "../../mobile/mobilepayment"
 
-const Payment = ({payment, setPaymentActive}) => {
+import Image from "next/image"
+
+const Payment = ({payment, setPaymentActive, openPaymentOptions}) => {
 
     const switchChanged = () => {
         setPaymentActive(payment)
+    }
+
+    const showPaymentOptions = () => {
+        openPaymentOptions(payment);
     }
 
     return <>
@@ -30,6 +36,9 @@ const Payment = ({payment, setPaymentActive}) => {
                 <label>
                     <Switch onChange={switchChanged} checked={payment.active} onColor="#E41F26" />
                 </label>
+            </div>
+            <div style={{width: "40px", maxWidth: "40px"}} className={styles.paymentItem}>
+                <Image className={styles.paymentMenuBtn} onClick={showPaymentOptions} src="/images/options.png" width={30} height={30} />
             </div>
         </div>
 

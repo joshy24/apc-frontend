@@ -29,3 +29,7 @@ export const ADMIN_SEARCH_PAYMENTS = "/api/v1/admin/search_payments/"
 export const CREATE_PAYMENT = "/api/v1/admin/create_payment/"
 
 export const EDIT_PAYMENT = "/api/v1/admin/edit_payment/"
+
+export const DELETE_PAYMENT = "/api/v1/admin/delete_payment/"
+
+export const RESET_PAYMENT = "/api/v1/admin/reset_payment/"

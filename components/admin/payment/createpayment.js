@@ -76,7 +76,6 @@ const CreatePayment = ({setMessage, setLoading, paymentCreated, setCreatePayment
         }
         catch(err){
             setLoading(false)
-            console.log(err)
             setMessage({message: err.message, type: "ERROR", title: "Message", visible: true})
         }
     }
@@ -89,7 +88,7 @@ const CreatePayment = ({setMessage, setLoading, paymentCreated, setCreatePayment
     return <div className={`${styles.paymentModal} ${styles.createPayment}`}>
         <div className={styles.paymentModalInnerContent}>
             <div className={styles.paymentModalTopcontent}>
-                <h2>Create Payment</h2>
+                <h2 className={styles.modalTitle}>Create Payment</h2>
                 <button onClick={setCreatePaymentInvisible} className={styles.closeBtn}></button>
             </div>
             

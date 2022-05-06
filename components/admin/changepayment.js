@@ -52,7 +52,7 @@ const ChangePayment = ({setLoading, paymentChanged, setShowPayment}) => {
     return <div className={`${styles.paymentModal} ${styles.changePayment}`}>
         <div className={styles.paymentModalInnerContent}>
             <div className={styles.paymentModalTopcontent}>
-                <h2>Select Payment</h2>
+                <h2 modalTitle>Select Payment</h2>
                 <button onClick={hidePayment} className={styles.closeBtn}></button>
             </div>
             <div className={styles.payment}>

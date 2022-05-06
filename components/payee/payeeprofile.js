@@ -52,8 +52,13 @@ const PayeeProfile = ({payee, setAmount, setMember, setMessage}) => {
                 </div>
 
                 <div className={styles.payeeDetail}>
-                    <h6>Amount to be paid</h6>
+                    <h6>Amount</h6>
                     <h5>{getAmount(payee.amount)}</h5>
+                </div>
+
+                <div className={styles.payeeDetail}>
+                    <h6>Name</h6>
+                    <h5>{payee.payment_name}</h5>
                 </div>
 
                 <div className={styles.payeeDetail}>

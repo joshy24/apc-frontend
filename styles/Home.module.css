@@ -127,6 +127,14 @@ General Styles
     margin: 0px;
 }
 
+.modalTitle{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24.2044px;
+    margin: 0px;
+}
+
 .paidText{
     font-family: 'DM Sans';
     font-style: normal;
@@ -1651,6 +1659,81 @@ Mobile Search Filter Compopnent
 
 
 
+/*
+Payment Menu Options
+*/
+
+.paymentMenuBtn:hover{
+    cursor: pointer;
+}
+
+.paymentMenuOptions{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.paymentMenuOptions .paymentMenuOptionsHolder{
+    display: flex;
+    background: #FFFFFF;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 24px 20px 24px;
+    border-radius: 8px;
+    min-width: 300px;
+}
+
+.paymentMenuOptions .paymentMenuOptionsInnerContent{
+    display: flex;
+    padding: 0px 71px 0px 71px;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.paymentMenuOptionsTopcontent{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.paymentMenuOptions .paymentMenuOptionsHolder .paymentMenuOptionsItem{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+.paymentMenuOptions .paymentMenuOptionsHolder .paymentMenuOptionsItem:hover{
+    cursor: pointer;
+}
+
+.paymentMenuOptionsItem h4{
+    margin-left: 16px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18.1889px;
+    line-height: 16px;
+    color: #222128;
+}
+
+
+
+
+
+
+
 
 .mobileNav{
     display: none;
@@ -1663,9 +1746,19 @@ Mobile Search Filter Compopnent
 }
 
 
-/*.showDisplayHolderOnMobile{
-    display: none;
-}*/
+
+
+
+
+/*
+Admin Export
+*/
+
+.adminExport{
+
+}
+
+
 
 
 
