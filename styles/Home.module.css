@@ -319,6 +319,10 @@ Payee Single Result Component
     margin-bottom: 20px;
 }
 
+.payeeResult:hover{
+    cursor: pointer;
+}
+
 .payeeResult .payeeAvatar{
    margin-right: 20px;
 }
@@ -1947,6 +1951,11 @@ Mobile Queries
         font-style: normal;
         font-size: 14.3006px;
     }
+
+    .payeeResults{
+        margin-left: 12px;
+        margin-right: 12px;
+    }
 }   
 
 
@@ -2026,6 +2035,12 @@ Mobile Queries
         z-index: 10;
         padding: 0px 16px 0px 16px;
     }
+
+    .payeeResults{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
 
 
     /*
