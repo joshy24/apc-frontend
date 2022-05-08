@@ -10,6 +10,8 @@ import {getExportRequest} from "../../utils/api.requests"
 
 import {BASE_URL, EXPORT} from "../../utils/api.endpoints"
 
+const FileDownload = require('js-file-download');
+
 const base_state = "State";
 const base_lga = "Local Government Area";
 
@@ -51,24 +53,36 @@ const AdminExport = ({setLoading, setMessage}) => {
         e.preventDefault();
 
         try{
+            setLoading(true)
+
             let url = BASE_URL+EXPORT+"?state="+state+"&lga="+lga+"&export_type="+export_type +"&payment_status="+paymentStatus;
 
             let result = await getExportRequest(url, export_type=="excel" ? "xlsx" : "pdf");
 
+            setLoading(false)
+
             if(result){
-                const d_url = window.URL.createObjectURL(new Blob([result]));
+                /*const d_url = window.URL.createObjectURL(new Blob([result]));
                 const link = document.createElement('a');
                 const file_name = 'file.'+export_type=="excel" ? ".xlsx" : ".pdf"
                 link.href = d_url;
                 link.setAttribute('download', file_name); //or any other extension
                 document.body.appendChild(link);
-                link.click();
+                link.click();*/
+
+                let file_name = "file"+(export_type=="excel" ? ".xlsx" : ".pdf")
+
+                FileDownload(result, file_name);
             }
             else{
+                setLoading(false)
                 console.log(result)
+                setMessage({message: "An error occurred exporting the data", visible: true, type: "ERROR"})
             }
         }
         catch(err){
+            setMessage({message: "An error occurred exporting the data", visible: true, type: "ERROR"})
+            setLoading(false)
             console.log(err)
         }
     }

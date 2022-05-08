@@ -50,7 +50,7 @@ const Dashboard = () => {
                     (nav == "payment") && <AdminPayment setMessage={setMessage} setLoading={setLoading} />
                 }
                 {
-                    (nav == "export") && <AdminExport setLoading={setLoading} />
+                    (nav == "export") && <AdminExport setMessage={setMessage} setLoading={setLoading} />
                 }
             </div>
         </div>
