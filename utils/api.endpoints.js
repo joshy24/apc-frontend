@@ -33,3 +33,5 @@ export const EDIT_PAYMENT = "/api/v1/admin/edit_payment/"
 export const DELETE_PAYMENT = "/api/v1/admin/delete_payment/"
 
 export const RESET_PAYMENT = "/api/v1/admin/reset_payment/"
+
+export const EXPORT = "/api/v1/admin/export_data/"

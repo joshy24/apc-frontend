@@ -105,7 +105,7 @@ export default class AuthHelperMethods{
         const headers = {
             "Accept": "application/json",
             "Content-Type": "application/json",
-            'Access-Control-Allow-Origin' : 'https://virtualvisitsng.com',
+            //'Access-Control-Allow-Origin' : 'https://virtualvisitsng.com',
             'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
         };
 
@@ -128,6 +128,44 @@ export default class AuthHelperMethods{
             timeout: 30000,
             headers: headers,
             withCredentials: false,
+        })
+        .then(this._checkStatus)
+        .then(response => response )
+        .catch(err => { 
+            if(err.response.data == "Bad Request Token" || err.response.data == "Expired Token"){
+                this.logout();
+            }
+            throw new Error(err);
+        })
+    };
+
+    axios_export = (url, extension) => {
+        // performs api calls sending the required authentication headers
+        const headers = {
+            "Accept": "application/"+extension,
+            "Content-Type": "application/"+extension,
+            //'Access-Control-Allow-Origin' : 'https://virtualvisitsng.com',
+            'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+        };
+
+        // Setting Authorization header
+        // Authorization: Bearer xxxxxxx.xxxxxxxx.xxxxxx
+
+        if(typeof window !== 'undefined'){//if we are on the browser then attach the token
+            if (this.loggedIn()) {
+                headers["Authorization"] = "Bearer:" + this.getToken();
+            }
+        }
+        
+        return axios({
+            url:url,
+            method: "get",
+            //baseURL: 'http://localhost:3999',
+            baseURL: 'https://apc-api-ng.herokuapp.com',
+            timeout: 30000,
+            headers: headers,
+            withCredentials: false,
+            responseType: 'blob',
         })
         .then(this._checkStatus)
         .then(response => response )

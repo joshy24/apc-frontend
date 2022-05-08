@@ -34,3 +34,20 @@ input:hover{
 select:hover{
   cursor: pointer;
 }  
+
+
+.generalSelect{
+    border: none;
+    box-sizing: border-box;
+    border-radius: 7.62524px;
+    height: 45px;
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-size: 16.3006px;
+    line-height: 24px;
+    color: #82859B;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+    background: #F6F6F6;
+}
